@@ -4,7 +4,14 @@
       "Bash(find:*)",
       "Bash(npx create-next-app:*)",
       "Bash(npx create-next-app@latest:*)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(npm run dev)",
+      "Bash(kill:*)",
+      "Bash(lsof:*)",
+      "mcp__zai-mcp-server__extract_text_from_screenshot",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
     ]
   }
 }

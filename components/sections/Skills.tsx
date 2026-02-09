@@ -9,10 +9,10 @@ const skillCategories = [
     title: 'Frontend',
     icon: '🎨',
     skills: [
-      { name: 'React / Next.js', level: 95 },
+      { name: 'VueJS / React / Next.js', level: 95 },
       { name: 'TypeScript', level: 90 },
       { name: 'Tailwind CSS', level: 95 },
-      { name: 'Redux / Zustand', level: 85 },
+      { name: 'Laravel', level: 85 },
       { name: 'HTML5 / CSS3', level: 95 },
     ],
   },
@@ -32,8 +32,8 @@ const skillCategories = [
     icon: '🤖',
     skills: [
       { name: 'UiPath', level: 90 },
-      { name: 'Automation Anywhere', level: 85 },
-      { name: 'Blue Prism', level: 75 },
+      { name: 'Power Apps', level: 85 },
+      { name: 'Power Automate', level: 75 },
       { name: 'Python Scripting', level: 80 },
       { name: 'SQL / PL-SQL', level: 85 },
     ],
