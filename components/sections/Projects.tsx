@@ -98,9 +98,9 @@ export default function Projects() {
             Projet Phare
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-6">
+          <div className="flex flex-col lg:flex-row gap-6">
             {/* Project Image - Compact */}
-            <div className="lg:col-span-1">
+            <div className="lg:w-2/5 flex-shrink-0">
               <a
                 href={projects[0].demo}
                 target="_blank"
@@ -116,23 +116,25 @@ export default function Projects() {
             </div>
 
             {/* Project Details */}
-            <div className="lg:col-span-2">
-              <h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
-                Maison Janah
-              </h3>
-              <p className="text-foreground/70 mb-4 text-sm leading-relaxed">
-                {projects[0].description}
-              </p>
+            <div className="lg:w-3/5 flex flex-col justify-between">
+              <div>
+                <h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
+                  Maison Janah
+                </h3>
+                <p className="text-foreground/70 mb-4 text-sm leading-relaxed">
+                  {projects[0].description}
+                </p>
 
-              <div className="flex flex-wrap gap-2 mb-4">
-                {projects[0].tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-2.5 py-1 bg-card rounded-full text-xs border border-border/50"
-                  >
-                    {tag}
-                  </span>
-                ))}
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {projects[0].tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-2.5 py-1 bg-card rounded-full text-xs border border-border/50"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
 
               <div className="flex flex-wrap gap-3 mb-4">
@@ -158,7 +160,7 @@ export default function Projects() {
 
               <div>
                 <h4 className="font-semibold mb-3 text-foreground/80 text-sm">Points forts :</h4>
-                <ul className="space-y-2">
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2">
                   {projects[0].highlights!.map((highlight) => (
                     <motion.li
                       key={highlight}
