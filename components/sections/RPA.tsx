@@ -99,7 +99,7 @@ export default function RPA() {
           className="bg-card rounded-2xl p-8 border border-border/50 mb-16"
         >
           <h3 className="text-2xl font-bold mb-6 text-center">Technologies Maîtrisées</h3>
-          <div className="grid grid-cols-3 md:grid-cols-6 gap-6">
+          <div className="flex flex-wrap justify-between gap-6">
             {rpaTech.map((tech) => (
               <div key={tech.name} className="text-center">
                 <div className="relative w-20 h-20 mx-auto mb-3">
