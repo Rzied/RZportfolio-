@@ -92,70 +92,87 @@ export default function Projects() {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="mb-12 p-8 bg-gradient-to-br from-primary/10 via-purple-600/10 to-pink-600/10 rounded-3xl border-2 border-primary/30 relative overflow-hidden"
+          className="mb-12 p-6 bg-gradient-to-br from-primary/10 via-purple-600/10 to-pink-600/10 rounded-3xl border-2 border-primary/30 relative overflow-hidden"
         >
           <div className="absolute top-4 right-4 px-4 py-1 bg-gradient-to-r from-primary to-purple-600 text-white text-sm font-semibold rounded-full">
             Projet Phare
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8">
-            <div>
-              <h3 className="text-3xl font-bold mb-4 bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
+          <div className="grid lg:grid-cols-3 gap-6">
+            {/* Project Image - Compact */}
+            <div className="lg:col-span-1">
+              <a
+                href={projects[0].demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block group rounded-xl overflow-hidden border border-border/50 hover:border-primary/50 transition-colors"
+              >
+                <img
+                  src="/projects/maison-janah.png"
+                  alt="Maison Janah"
+                  className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              </a>
+            </div>
+
+            {/* Project Details */}
+            <div className="lg:col-span-2">
+              <h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
                 Maison Janah
               </h3>
-              <p className="text-foreground/70 mb-6 leading-relaxed">
+              <p className="text-foreground/70 mb-4 text-sm leading-relaxed">
                 {projects[0].description}
               </p>
 
-              <div className="flex flex-wrap gap-2 mb-6">
+              <div className="flex flex-wrap gap-2 mb-4">
                 {projects[0].tags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-3 py-1 bg-card rounded-full text-sm border border-border/50"
+                    className="px-2.5 py-1 bg-card rounded-full text-xs border border-border/50"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
 
-              <div className="flex gap-4">
+              <div className="flex flex-wrap gap-3 mb-4">
                 <a
                   href={projects[0].demo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary to-purple-600 text-white rounded-full font-medium hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 hover:scale-105"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-primary to-purple-600 text-white rounded-full text-sm font-medium hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 hover:scale-105"
                 >
-                  <ExternalLink size={18} />
+                  <ExternalLink size={16} />
                   Voir le site
                 </a>
                 <a
                   href={projects[0].github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-6 py-3 border-2 border-primary text-primary rounded-full font-medium hover:bg-primary hover:text-white transition-all duration-300"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 border-2 border-primary text-primary rounded-full text-sm font-medium hover:bg-primary hover:text-white transition-all duration-300"
                 >
-                  <Github size={18} />
+                  <Github size={16} />
                   Code source
                 </a>
               </div>
-            </div>
 
-            <div>
-              <h4 className="font-semibold mb-4 text-foreground/80">Points forts du projet :</h4>
-              <ul className="space-y-3">
-                {projects[0].highlights!.map((highlight) => (
-                  <motion.li
-                    key={highlight}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={isInView ? { opacity: 1, x: 0 } : {}}
-                    transition={{ delay: 0.3 + projects[0].highlights!.indexOf(highlight) * 0.1 }}
-                    className="flex items-start gap-3"
-                  >
-                    <span className="w-2 h-2 mt-2 bg-gradient-to-r from-primary to-purple-600 rounded-full shrink-0" />
-                    <span className="text-foreground/70">{highlight}</span>
-                  </motion.li>
-                ))}
-              </ul>
+              <div>
+                <h4 className="font-semibold mb-3 text-foreground/80 text-sm">Points forts :</h4>
+                <ul className="space-y-2">
+                  {projects[0].highlights!.map((highlight) => (
+                    <motion.li
+                      key={highlight}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={isInView ? { opacity: 1, x: 0 } : {}}
+                      transition={{ delay: 0.3 + projects[0].highlights!.indexOf(highlight) * 0.1 }}
+                      className="flex items-start gap-2 text-sm"
+                    >
+                      <span className="w-1.5 h-1.5 mt-1.5 bg-gradient-to-r from-primary to-purple-600 rounded-full shrink-0" />
+                      <span className="text-foreground/70">{highlight}</span>
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </motion.div>
