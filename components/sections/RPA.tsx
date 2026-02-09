@@ -14,7 +14,7 @@ const rpaServices = [
   {
     icon: Zap,
     title: 'Développement de Bots',
-    description: 'Création de robots logiciels intelligents avec UiPath et Automation Anywhere',
+    description: 'Création de robots logiciels intelligents avec UiPath et Power automate',
   },
   {
     icon: TrendingUp,
@@ -29,9 +29,9 @@ const rpaServices = [
 ]
 
 const rpaTech = [
-  { name: 'UiPath', level: 90 },
-  { name: 'Automation Anywhere', level: 85 },
-  { name: 'Blue Prism', level: 75 },
+  { name: 'Power Automate', level: 90 },
+  { name: 'Power Apps', level: 80 },
+  { name: 'UiPath', level: 80 },
   { name: 'Python / Scripting', level: 80 },
   { name: 'SQL / PL-SQL', level: 85 },
 ]
@@ -67,7 +67,7 @@ export default function RPA() {
           </h2>
           <p className="text-lg text-foreground/60 max-w-3xl mx-auto">
             Consultant RPA expérimenté, je vous aide à automatiser vos processus métier pour
-            gagner en efficacité et réduire les coûts. Spécialisé en UiPath et Automation Anywhere,
+            gagner en efficacité et réduire les coûts. Spécialisé en UiPath et Microsoft Power Automate / Power Apps,
             j'interviens sur des projets d'automatisation dans divers secteurs.
           </p>
         </motion.div>
@@ -99,7 +99,7 @@ export default function RPA() {
           className="bg-card rounded-2xl p-8 border border-border/50 mb-16"
         >
           <h3 className="text-2xl font-bold mb-6 text-center">Technologies Maîtrisées</h3>
-          <div className="grid md:grid-cols-5 gap-6">
+          <div className="grid grid-cols-3 md:grid-cols-6 gap-6">
             {rpaTech.map((tech) => (
               <div key={tech.name} className="text-center">
                 <div className="relative w-20 h-20 mx-auto mb-3">

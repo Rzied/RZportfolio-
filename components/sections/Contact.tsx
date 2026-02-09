@@ -9,20 +9,20 @@ const contactInfo = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'zied.rjeb@gmail.com',
-    href: 'mailto:zied.rjeb@gmail.com',
+    value: 'rjeb.zied2@gmail.com',
+    href: 'mailto:rjeb.zied2@gmail.com',
   },
   {
     icon: Linkedin,
     label: 'LinkedIn',
     value: 'linkedin.com/in/ziedrjeb',
-    href: 'https://linkedin.com/in/ziedrjeb',
+    href: 'https://www.linkedin.com/in/zied-rjeb-2b42311bb/',
   },
   {
     icon: Github,
     label: 'GitHub',
-    value: 'github.com/ziedrjeb',
-    href: 'https://github.com/ziedrjeb',
+    value: 'github.com/Rzied',
+    href: 'https://github.com/Rzied',
   },
   {
     icon: MapPin,
