@@ -8,18 +8,18 @@ import { useRef } from 'react'
 const projects = [
   {
     title: 'Maison Janah',
-    description: 'Plateforme immobilière complète avec gestion des biens, recherches avancées, et interface admin. Système de gestion de base de données optimisé et SEO amélioré.',
+    description: 'Site e-commerce développé pour une marque de création de bougies parfumées avec personnalisation complète, intégrant un design épuré, une navigation optimisée et des animations modernes pour une expérience utilisateur premium.',
     image: '/projects/maison-janah.jpg',
-    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'PostgreSQL', 'Prisma'],
+    tags: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'shadcn-ui', 'Radix UI', 'Supabase', 'Stripe'],
     github: 'https://github.com/ziedrjeb/maison-janah',
-    demo: 'https://maison-janah.com',
+    demo: 'https://maison-janah.fr',
     featured: true,
     highlights: [
-      'Architecture Next.js 14 avec App Router',
-      'Base de données PostgreSQL avec Prisma ORM',
-      'Interface responsive moderne',
-      'Optimisation SEO avancée',
-      'Système d\'authentification sécurisé',
+      'Frontend rapide et performant avec React 18, Vite et TypeScript',
+      'UI premium et accessible grâce à Tailwind CSS, shadcn/ui et Radix UI',
+      'Backend serverless scalable basé sur Supabase (auth, DB, storage)',
+      'Paiements sécurisés et fiables via Stripe',
+      'Expérience utilisateur fluide et responsive, pensée mobile-first',
     ],
   },
   {
@@ -151,7 +151,7 @@ export default function Projects() {
                     transition={{ delay: 0.3 + projects[0].highlights!.indexOf(highlight) * 0.1 }}
                     className="flex items-start gap-3"
                   >
-                    <span className="w-2 h-2 mt-2 bg-gradient-to-r from-primary to-purple-600 rounded-full flex-shrink-0" />
+                    <span className="w-2 h-2 mt-2 bg-gradient-to-r from-primary to-purple-600 rounded-full shrink-0" />
                     <span className="text-foreground/70">{highlight}</span>
                   </motion.li>
                 ))}
