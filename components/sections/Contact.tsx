@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { Mail, Linkedin, Github, MapPin, Send } from 'lucide-react'
 import { useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
+import emailjs from '@emailjs/browser'
 
 const contactInfo = [
   {
@@ -43,19 +44,36 @@ export default function Contact() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const [error, setError] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setError(false)
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    try {
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      )
 
-    setSubmitted(true)
-    setIsSubmitting(false)
-    setFormData({ name: '', email: '', subject: '', message: '' })
+      setSubmitted(true)
+      setFormData({ name: '', email: '', subject: '', message: '' })
 
-    setTimeout(() => setSubmitted(false), 5000)
+      setTimeout(() => setSubmitted(false), 5000)
+    } catch (err) {
+      console.error('EmailJS error:', err)
+      setError(true)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -195,6 +213,10 @@ export default function Contact() {
                   <>
                     <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                     Envoi en cours...
+                  </>
+                ) : error ? (
+                  <>
+                    <span>Erreur d'envoi. Réessayez.</span>
                   </>
                 ) : submitted ? (
                   <>
