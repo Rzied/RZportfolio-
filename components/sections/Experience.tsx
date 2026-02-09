@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Briefcase, Calendar, Building } from 'lucide-react'
+import { Calendar, Building } from 'lucide-react'
 import { useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
 
@@ -100,7 +100,7 @@ export default function Experience() {
 
             {experiences.map((exp, index) => (
               <motion.div
-                key={exp.title}
+                key={`${exp.title}-${exp.company}-${index}`}
                 initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
