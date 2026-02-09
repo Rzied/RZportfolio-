@@ -1,0 +1,219 @@
+'use client'
+
+import { motion } from 'framer-motion'
+import { ExternalLink, Github } from 'lucide-react'
+import { useInView } from 'framer-motion'
+import { useRef } from 'react'
+
+const projects = [
+  {
+    title: 'Maison Janah',
+    description: 'Plateforme immobilière complète avec gestion des biens, recherches avancées, et interface admin. Système de gestion de base de données optimisé et SEO amélioré.',
+    image: '/projects/maison-janah.jpg',
+    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'PostgreSQL', 'Prisma'],
+    github: 'https://github.com/ziedrjeb/maison-janah',
+    demo: 'https://maison-janah.com',
+    featured: true,
+    highlights: [
+      'Architecture Next.js 14 avec App Router',
+      'Base de données PostgreSQL avec Prisma ORM',
+      'Interface responsive moderne',
+      'Optimisation SEO avancée',
+      'Système d\'authentification sécurisé',
+    ],
+  },
+  {
+    title: 'Dashboard Analytics',
+    description: 'Tableau de bord interactif pour la visualisation de données en temps réel avec graphiques dynamiques et export de rapport.',
+    image: '/projects/dashboard.jpg',
+    tags: ['React', 'TypeScript', 'Chart.js', 'Node.js', 'MongoDB'],
+    github: 'https://github.com/ziedrjeb/dashboard-analytics',
+    featured: false,
+  },
+  {
+    title: 'E-Commerce Platform',
+    description: 'Plateforme e-commerce complète avec gestion des produits, panier, paiement Stripe et gestion des commandes.',
+    image: '/projects/ecommerce.jpg',
+    tags: ['Next.js', 'Stripe', 'PostgreSQL', 'Tailwind', 'Prisma'],
+    github: 'https://github.com/ziedrjeb/ecommerce-platform',
+    featured: false,
+  },
+  {
+    title: 'Task Management App',
+    description: 'Application de gestion de tâches collaborative avec fonctionnalités de kanban, notifications et synchronisation en temps réel.',
+    image: '/projects/taskapp.jpg',
+    tags: ['React', 'Redux', 'Firebase', 'Tailwind'],
+    github: 'https://github.com/ziedrjeb/task-management',
+    featured: false,
+  },
+  {
+    title: 'API RESTful',
+    description: 'API RESTful robuste avec documentation Swagger, authentification JWT, tests unitaires et CI/CD.',
+    image: '/projects/api.jpg',
+    tags: ['Node.js', 'Express', 'JWT', 'Jest', 'Docker'],
+    github: 'https://github.com/ziedrjeb/rest-api',
+    featured: false,
+  },
+  {
+    title: 'Portfolio V1',
+    description: 'Première version de portfolio personnel avec animations et design moderne.',
+    image: '/projects/portfolio-v1.jpg',
+    tags: ['React', 'Framer Motion', 'Sass'],
+    github: 'https://github.com/ziedrjeb/portfolio-v1',
+    featured: false,
+  },
+]
+
+export default function Projects() {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: '-100px' })
+
+  return (
+    <section id="projects" className="py-20 md:py-32" ref={ref}>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <span className="bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
+              Mes Projets
+            </span>
+          </h2>
+          <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
+            Une sélection de mes projets les plus significatifs
+          </p>
+        </motion.div>
+
+        {/* Featured Project */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="mb-12 p-8 bg-gradient-to-br from-primary/10 via-purple-600/10 to-pink-600/10 rounded-3xl border-2 border-primary/30 relative overflow-hidden"
+        >
+          <div className="absolute top-4 right-4 px-4 py-1 bg-gradient-to-r from-primary to-purple-600 text-white text-sm font-semibold rounded-full">
+            Projet Phare
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-8">
+            <div>
+              <h3 className="text-3xl font-bold mb-4 bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
+                Maison Janah
+              </h3>
+              <p className="text-foreground/70 mb-6 leading-relaxed">
+                {projects[0].description}
+              </p>
+
+              <div className="flex flex-wrap gap-2 mb-6">
+                {projects[0].tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-3 py-1 bg-card rounded-full text-sm border border-border/50"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <div className="flex gap-4">
+                <a
+                  href={projects[0].demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary to-purple-600 text-white rounded-full font-medium hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 hover:scale-105"
+                >
+                  <ExternalLink size={18} />
+                  Voir le site
+                </a>
+                <a
+                  href={projects[0].github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-6 py-3 border-2 border-primary text-primary rounded-full font-medium hover:bg-primary hover:text-white transition-all duration-300"
+                >
+                  <Github size={18} />
+                  Code source
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-4 text-foreground/80">Points forts du projet :</h4>
+              <ul className="space-y-3">
+                {projects[0].highlights!.map((highlight) => (
+                  <motion.li
+                    key={highlight}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={isInView ? { opacity: 1, x: 0 } : {}}
+                    transition={{ delay: 0.3 + projects[0].highlights!.indexOf(highlight) * 0.1 }}
+                    className="flex items-start gap-3"
+                  >
+                    <span className="w-2 h-2 mt-2 bg-gradient-to-r from-primary to-purple-600 rounded-full flex-shrink-0" />
+                    <span className="text-foreground/70">{highlight}</span>
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Other Projects Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projects.slice(1).map((project, index) => (
+            <motion.div
+              key={project.title}
+              initial={{ opacity: 0, y: 50 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+              className="group bg-card rounded-2xl overflow-hidden border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10"
+            >
+              <div className="aspect-video bg-gradient-to-br from-primary/20 to-purple-600/20 flex items-center justify-center">
+                <span className="text-6xl opacity-20 group-hover:opacity-40 transition-opacity">
+                  🚀
+                </span>
+              </div>
+
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+                  {project.title}
+                </h3>
+                <p className="text-foreground/60 text-sm mb-4 line-clamp-2">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tags.slice(0, 3).map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-2 py-1 bg-muted rounded-full text-xs"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                  {project.tags.length > 3 && (
+                    <span className="px-2 py-1 bg-muted rounded-full text-xs">
+                      +{project.tags.length - 3}
+                    </span>
+                  )}
+                </div>
+
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-primary hover:text-purple-600 transition-colors text-sm font-medium"
+                >
+                  <Github size={16} />
+                  Voir sur GitHub
+                </a>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
