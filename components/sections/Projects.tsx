@@ -11,7 +11,7 @@ const projects = [
     description: 'Site e-commerce développé pour une marque de création de bougies parfumées avec personnalisation complète, intégrant un design épuré, une navigation optimisée et des animations modernes pour une expérience utilisateur premium.',
     image: '/projects/maison-janah.jpg',
     tags: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'shadcn-ui', 'Radix UI', 'Supabase', 'Stripe'],
-    github: 'https://github.com/ziedrjeb/maison-janah',
+    github: 'https://github.com/Rzied/maison-janah-doc',
     demo: 'https://maison-janah.fr',
     featured: true,
     highlights: [
