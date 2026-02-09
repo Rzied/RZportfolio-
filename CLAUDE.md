@@ -7,6 +7,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 Portfolio personnel "Mind-Blowing" pour Zied RJEB - Développeur Full-Stack & Consultant RPA.
 Site vitrine moderne avec animations, mettant en avant les compétences en développement web et l'expertise RPA.
 
+**GitHub**: https://github.com/Rzied/RZportfolio-
+
 ## Tech Stack
 
 - **Framework**: Next.js 16+ (App Router) avec TypeScript
@@ -18,14 +20,13 @@ Site vitrine moderne avec animations, mettant en avant les compétences en déve
 
 ```bash
 # Development
-cd portfolio
 npm run dev          # Start dev server on localhost:3000
 npm run build        # Build for production
 npm run start        # Start production server
 npm run lint         # Run ESLint
 
-# Dependencies
-npm install          # Install dependencies
+# Git
+git push origin main # Push changes to GitHub
 ```
 
 ## Project Structure
@@ -67,6 +68,12 @@ portfolio/
 - CSS variables for theming (light/dark mode support)
 - Gradient accents using `bg-gradient-to-r` from primary to purple-600
 - Consistent spacing with `container mx-auto px-4`
+
+## Important Notes
+
+- **SSR Warning**: When using `window` or browser APIs, always check if component is mounted with `useState` + `useEffect` pattern (see Hero.tsx)
+- All section components use `'use client'` directive for Framer Motion animations
+- Remote repository: `https://github.com/Rzied/RZportfolio-.git`
 
 ## Content Updates
 
