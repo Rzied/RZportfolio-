@@ -58,9 +58,9 @@ const projects = [
   {
     title: 'Portfolio V1',
     description: 'Première version de portfolio personnel avec animations et design moderne.',
-    image: '/projects/portfolio-v1.jpg',
-    tags: ['React', 'Framer Motion', 'Sass'],
-    github: 'https://github.com/ziedrjeb/portfolio-v1',
+    image: '/projects/portfolio-v1.png',
+    tags: ['React', 'Vite', 'TypeScript'],
+    github: 'https://github.com/Rzied/Portfolio-V1',
     featured: false,
   },
 ]
