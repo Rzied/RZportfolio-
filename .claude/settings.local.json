@@ -11,7 +11,8 @@
       "mcp__zai-mcp-server__extract_text_from_screenshot",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(ls:*)"
     ]
   }
 }

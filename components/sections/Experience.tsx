@@ -9,17 +9,18 @@ const experiences = [
   {
     title: 'Freelance Consultant',
     company: 'Indépendant',
-    period: 'Oct 2022 - Présent',
+    period: 'Sep 2023 - Présent',
     location: 'Paris, France',
     type: 'Freelance',
     description: 'Développement web et consulting RPA pour divers clients. Création de solutions sur mesure et optimisation de processus métier.',
     achievements: [
-      'Développement de plateforme immobilière complète (Maison Janah)',
-      'Automatisation de processus administratifs pour PME',
+      'Développement de plateforme e-commerce complète (Maison-Janah)',
+      'Expérience utilisateur fluide et responsive, pensée mobile-first',
+      'Paiements sécurisés et fiables via Stripe',
       'Conseil en architecture logicielle et choix techniques',
-      'Formation et accompagnement d\'équipes de développement',
+      'Formation et accompagnement du client',
     ],
-    technologies: ['Next.js', 'TypeScript', 'UiPath', 'PostgreSQL', 'Docker'],
+    technologies: ['React.js', 'TypeScript', 'Vite', 'Supabase', 'Stripe', 'Tailwind CSS', 'Git'],
   },
   {
     title: 'RPA Developer',
