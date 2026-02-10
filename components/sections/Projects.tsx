@@ -40,10 +40,11 @@ const projects = [
   },
   {
     title: 'Task Management App',
-    description: 'Application de gestion de tâches collaborative avec fonctionnalités de kanban, notifications et synchronisation en temps réel.',
-    image: '/projects/taskapp.jpg',
-    tags: ['React', 'Redux', 'Firebase', 'Tailwind'],
-    github: 'https://github.com/ziedrjeb/task-management',
+    description: 'Une application de gestion des tâches moderne et intelligente avec des suggestions de priorité basées sur IA, un mode concentration et une interface glisser- déposer intuitive.',
+    image: '/projects/taskapp.png',
+    tags: ['React 18', 'TypeScript', 'Vite', 'Zustand', 'Framer Motion', '@dnd-kit',
+      'Tailwind CSS', 'OpenAI API', 'Vitest', 'Playwright'],
+    github: 'https://github.com/Rzied/Smart-Task-Planner',
     featured: false,
   },
   {
@@ -189,10 +190,12 @@ export default function Projects() {
               transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
               className="group bg-card rounded-2xl overflow-hidden border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10"
             >
-              <div className="aspect-video bg-gradient-to-br from-primary/20 to-purple-600/20 flex items-center justify-center">
-                <span className="text-6xl opacity-20 group-hover:opacity-40 transition-opacity">
-                  🚀
-                </span>
+              <div className="aspect-video bg-gradient-to-br from-primary/20 to-purple-600/20 flex items-center justify-center overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
               </div>
 
               <div className="p-6">
@@ -226,7 +229,7 @@ export default function Projects() {
                   className="inline-flex items-center gap-2 text-primary hover:text-purple-600 transition-colors text-sm font-medium"
                 >
                   <Github size={16} />
-                  Voir sur GitHub
+                  Voir sur Github
                 </a>
               </div>
             </motion.div>
