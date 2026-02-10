@@ -140,9 +140,9 @@ export default function Experience() {
                             <span className="text-sm">{exp.company}</span>
                           </div>
                         </div>
-                        <span className="hidden md:inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full">
+                        {/* <span className="hidden md:inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full">
                           {exp.type}
-                        </span>
+                        </span> */}
                       </div>
 
                       <p className="text-foreground/70 text-sm mb-4">{exp.description}</p>
