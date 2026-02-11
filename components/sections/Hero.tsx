@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowDown, Mail } from 'lucide-react'
+import { ArrowDown, Mail, Download } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
 const roles = ['Full-Stack Developer', 'RPA Consultant', 'Creative Technologist']
@@ -136,6 +136,16 @@ export default function Hero() {
             >
               Me contacter
             </a>
+            <motion.a
+              href="/cv/CV_Zied_RJEB.pdf"
+              download
+              className="px-6 py-3 bg-card border-2 border-border hover:border-primary text-foreground hover:text-primary rounded-full font-medium transition-all duration-300 flex items-center gap-2 hover:scale-105"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Download size={18} />
+              <span>Mon CV</span>
+            </motion.a>
           </motion.div>
 
           <motion.div
