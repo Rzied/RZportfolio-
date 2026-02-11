@@ -48,11 +48,11 @@ const projects = [
     featured: false,
   },
   {
-    title: 'API RESTful',
-    description: 'API RESTful robuste avec documentation Swagger, authentification JWT, tests unitaires et CI/CD.',
-    image: '/projects/api.jpg',
-    tags: ['Node.js', 'Express', 'JWT', 'Jest', 'Docker'],
-    github: 'https://github.com/ziedrjeb/rest-api',
+    title: 'City Insights',
+    description: 'ACity Insights est une application web moderne qui centralise des données temps réel (météo, transports, pollution, événements) pour une ville donnée. L\'objectif est de démontrer la maîtrise des états asynchrones, de la résilience face aux APIs instables et d\'une UX claire..',
+    image: '/projects/city-insight.png',
+    tags: ['React 18', 'TypeScript', 'Vite', 'Tailwind CSS', 'TanStack Query'],
+    github: 'https://github.com/Rzied/City-Insights-',
     featured: false,
   },
   {
